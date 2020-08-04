@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(220, 255, 188);
+  
+}
+.container {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  max-width: 85vw;
+  margin: 0 auto;
+}
+.expense-tracker-title {
+  border-bottom: 2px solid #888;
+  padding: 1rem 0;
+  color: rgb(0, 221, 0);
+}
+.balance-container {
+  margin: 2rem 0;
+}
+#balance-amount {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: rgb(4, 0, 255);
+}
+.balance-container {
+  color: #666;
+}
+.expense-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.562);
+  padding: 0.8rem 4rem;
+}
+div[id$="-amount"] {
+  text-align: center;
+  margin-top: 1rem;
+}
+.income {
+  border-right: 1px solid #999;
+  /* margin: 1rem 2rem; */
+  padding: 1rem 4rem;
+}
+.expense {
+  padding: 1rem 4rem;
+}
+#plus-income-amount {
+  color: rgb(23, 231, 23);
+  font-weight: bold;
+}
+#negative-amount {
+    color: rgb(255, 44, 44);
+    font-weight: bold;
+}
+/* history section */
+
+.history-container {
+  margin: 2rem 0;
+  width: 95%;
+  display: none;
+}
+.history-title {
+  padding: 1rem 0;
+  border-bottom: 1px solid #999;
+  text-align: center;
+}
+.history-item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+div[id^="item-history-"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.39);
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  width: 90%;
+  position: relative;
+}
+.x-mark {
+    position: absolute;
+    top:50%;
+    left:-20px;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    background-color: red;
+    color: #fff;
+    line-height: 0.9;
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+    display: none;
+}
+div[id^="item-history-"]:hover .x-mark {
+    display: block;
+}
+div[id$="plus"] {
+  color: rgb(3, 206, 3);
+  border-right: 5px solid rgb(3, 206, 3);
+}
+div[id$="negative"] {
+  color: rgb(255, 44, 44);
+  border-right: 5px solid rgb(255, 44, 44);
+  /* padding-right: 3rem;
+    border-right: 4px solid rgb(255, 44, 44);; */
+}
+#negative-item {
+  font-weight: bold;
+}
+#plus-item {
+  font-weight: bold;
+
+}
+/* transaction-container */
+.transaction-container {
+  width: 95%;
+  margin: 2rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.transaction-title {
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #999;
+  text-align: center;
+  color: #444;
+}
+input[type="text"] {
+  width: 95%;
+  padding: 0.8rem 1.2rem;
+  background-color: transparent;
+  color: #888;
+  border: 2px dashed rgb(255, 6, 102);
+  border-radius: 12px;
+  margin: 1.1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+.input-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.input-section {
+  width: 100%;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.input-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.input-item label {
+  margin: 0 2rem;
+}
+label {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.exp-label {
+  color: rgb(3, 206, 3);
+}
+.amount-label {
+  color: rgb(3, 206, 3);
+}
+#add-btn {
+  text-align: center;
+  padding: 0.8rem 1.6rem;
+  margin: 0 auto;
+  align-content: center;
+  align-self: center;
+  background-color: rgb(23, 231, 23);
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid rgb(23, 231, 23);
+  font-size: 1rem;
+}
+#add-btn:hover {
+  opacity: 0.8;
+  border: 1px solid rgb(255, 167, 52);
+}
+/* error msg */
+.error-msg-container {
+  margin: 1rem auto;
+  background-color: rgba(255, 71, 71, 0.87);
+  color: #fff;
+  border-radius: 6px;
+  display: none;
+}
+.error-container {
+  position: relative;
+  padding: 1rem 4rem;
+}
+.error-box-close{
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media (max-width: 1700px) {
+  label {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1363px) {
+  .more-desc-amount {
+    display: none;
+  }
+  .x-mark {
+    position: absolute;
+    top:50%;
+    left:-20px;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    background-color: red;
+    color: #fff;
+    line-height: 0.9;
+    border-radius: 50%;
+    padding: 0px;
+}
+}
+@media (max-width:695px){
+  .error-container {
+    position: relative;
+    padding: 1rem 2rem;
+  }
+  .error-msg{
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 576px) {
+    .x-mark {
+        position: absolute;
+        top:50%;
+        left:-20px;
+        transform: translateY(-50%);
+        font-size: 1.7rem;
+        background-color: red;
+        color: #fff;
+        line-height: 0.9;
+        border-radius: 50%;
+        padding: 0;
+    }
+    input[type="text"] {
+        font-size: 0.9rem;
+    }
+    label {
+        font-size: 1rem;
+      }
+      .input-section {
+        width: 100%;
+        margin: 1rem auto;
+        display: grid;
+        grid-template-columns: 1fr ;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+  .expense-box {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.562);
+    padding: 0.8rem 1rem;
+  }
+}
+@media (max-width: 542px) {
+  /* input {
+      font-size: 1rem;
+  } */
+  .expense-box {
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.562);
+    padding: 0.5rem 0.9rem;
+  }
+  .expense {
+    padding: 1rem 2rem;
+  }
+  .income {
+    padding: 1rem 2rem;
+  }
+}
+@media (max-width: 345px) {
+    .expense-tracker-title{
+        font-size: 1.5rem;
+    }
+    .expense {
+        padding: 1rem 1rem;
+      }
+      .income {
+        padding: 1rem 1rem;
+      }
+}

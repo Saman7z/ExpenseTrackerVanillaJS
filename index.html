@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track it Down</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="expense-tracker-title">
+            Expense Tacker
+        </h1>
+        <div class="error-msg-container">
+            <div class="error-container">
+                <div class="error-msg"></div>
+                <div class="error-box-close">&times;</div>
+            </div>
+        </div>
+        <div class="balance-container">
+            <h2>YOUR BALANCE</h2>
+            <div id="balance-amount">$0</div>
+        </div>
+        <div class="expense-box">
+            <div class="income">
+                <h3>INCOME</h3>
+                <div id="plus-income-amount">$0</div>
+            </div>
+            <div class="expense">
+                <h3>EXPENSE</h3>
+                <div id="negative-amount">$0</div>
+            </div>
+        </div>
+        <div class="history-container">
+            <div class="history-title">
+                <h3>History</h3>
+            </div>
+            <div class="history-item-container">
+           
+            </div>
+        </div>
+        <div class="transaction-container">
+            <div class="transaction-title">
+                <h3>Add New Transaction</h3>
+            </div>
+            <div class="input-section-container">
+                <div class="input-section">
+                <div class="input-item">
+                    <label class="exp-label">Expenditure Title : </label>
+                    <input type="text" placeholder="Add New Expenditure" id="title" autocomplete="off">
+                </div>
+                <div class="input-item">
+                    <label class="amount-label">Amout <span class="more-desc-amount">(add expenses with minus and incomes with plus)</span> : </label>
+                    <input type="text" placeholder="For Example: +150 , -200 , ..." id="amount" autocomplete="off">
+                </div>
+                
+            </div>
+            <button id="add-btn" >Add Item</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
